@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base { 
+    .th-1 { 
+
+        --main-white: #FFF;
+        --main-black: #000 ;
+    
+        --main-color: #8FB77C ;
+        --sec-color: #EAF4E5 ;
+    
+        --dark-gray: #A8A8A8 ;
+        --light-gray: #F4F5F7 ;
+    
+        --roboto: "Roboto", sans-serif;
+
+        --th1-btn: #8FB77C;
+        --th2-btn: #4FA3E0 ;
+        --th3-btn: #B866CC;
+    
+    }
+    .th-2 { 
+
+        --main-white: #FFF;
+        --main-black: #000 ;
+    
+        --main-color: #7B9EB7 ;
+        --sec-color: #E6EEF4 ;
+    
+        --dark-gray: #A8A8A8 ;
+        --light-gray: #F4F5F7 ;
+    
+        --roboto: "Roboto", sans-serif;
+        --th1-btn: #8FB77C;
+        --th2-btn: #4FA3E0 ;
+        --th3-btn: #B866CC;
+    
+    }
+
+    .th-3 { 
+
+        --main-white: #FFF;
+        --main-black: #000 ;
+    
+        --main-color: #B866CC ;
+        --sec-color: #F4DFFB ;
+    
+        --dark-gray: #A8A8A8 ;
+        --light-gray: #F4F5F7 ;
+    
+        --roboto: "Roboto", sans-serif;
+        --th1-btn: #8FB77C;
+        --th2-btn: #4FA3E0 ;
+        --th3-btn: #B866CC;
+    
+    }
+
+    .mob-p { 
+        @apply px-5 sm:px-12 lg:px-20 xl:px-44;
+    }
+
+    .trans { 
+        @apply transition-all duration-500;
+    }
+
+    .specialTitle { 
+        @apply   text-main-color ;
+    }
+
+    .active { 
+        @apply bg-main-color p-1 opacity-100;
+    }
+    
+    .head { 
+        @apply font-bold text-[44px] leading-[50px] text-center ;
+    }
+    .space-up { 
+        @apply mt-24 lg:mt-40;
+    }
+    .rightAngle { 
+        @apply flex items-center justify-center text-main-white bg-main-color w-10 h-10 p-2 rounded-full cursor-pointer trans ;
+    }
+}
+
