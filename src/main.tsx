@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { BrowserRouter, RouterProvider, createBrowserRouter} from 'react-router-dom';
+import {  RouterProvider, createBrowserRouter} from 'react-router-dom';
 import Home from './pages/Home.tsx';
 import AllProducts from './pages/AllProducts.tsx';
 import InCart from './pages/InCart.tsx';
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/livin-furniture-store/",
-        element: <Home />,
+        element: <App />,
       },
       {
         path: "/livin-furniture-store/AllProducts",
