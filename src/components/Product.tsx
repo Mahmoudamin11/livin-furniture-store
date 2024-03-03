@@ -12,7 +12,7 @@ const Product = ({prod}:any) => {
   return (
     <div  className=' bg-light-gray  w-full h-full  flex flex-col gap-3 shadow-lg trans  '>
             <div className="w-full h-40 450:h-56 sm:h-44 xl:h-52 bg-white peer">
-              <Link to="/Product">
+              <Link to="/livin-furniture-store/Product">
               <img onClick={() => chooseProd(prod.head)}  src={prod.img} alt="" className='w-56 h-full  trans hover:shadow-md  cursor-pointer' />
               </Link>
             </div>
