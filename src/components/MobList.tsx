@@ -52,9 +52,7 @@ const MobList = () => {
                         Home
                     </span>
               </Link>
-              <Link to="/livin-furniture-store/" onClick={goToTest} className="w-fit">
-                <li className="trans hover:pl-3  hover:text-main-black cursor-pointer">About</li>
-              </Link>
+              
               <Link to="/livin-furniture-store/AllProducts" onClick={closeList} className="w-fit">
       
                       <span className={`${getOpenPage() == "product" ? "text-black" : " text-dark-gray"} trans hover:text-black hover:pl-3  `}>
@@ -63,6 +61,9 @@ const MobList = () => {
               </Link>
               <Link to="/livin-furniture-store/InCart" onClick={closeList} className="w-fit" >
                 <li className={`trans hover:pl-3  hover:text-main-black ${getOpenPage() == "cart" ? "text-black" : "text-dark-gray"} cursor-pointer`}>Cart</li>
+              </Link>
+              <Link to="/livin-furniture-store/" onClick={goToTest} className="w-fit">
+                <li className="trans hover:pl-3  hover:text-main-black cursor-pointer">About</li>
               </Link>
           </ul>
 

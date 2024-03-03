@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import {  RouterProvider, createBrowserRouter} from 'react-router-dom';
-import Home from './pages/Home.tsx';
 import AllProducts from './pages/AllProducts.tsx';
 import InCart from './pages/InCart.tsx';
 import Product from './components/Product.tsx';
+import Home from './pages/Home.tsx';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/livin-furniture-store/",
-        element: <App />,
+        element: <Home />,
       },
       {
         path: "/livin-furniture-store/AllProducts",
