@@ -9,7 +9,7 @@ import CartIcon from '../components/CartIcon';
 const AllProducts = () => {
     const location  = useLocation();
     const {products, changeOpenPage, getSearchedProd, getSearchState, changeSearchState} = useCart();
-    const [types, settypes] = useState([
+    const [types] = useState([
         "All",
         "Chair",
         "Plant",
