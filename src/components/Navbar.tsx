@@ -18,7 +18,7 @@ const Navbar = () => {
     
 
     useEffect(() => { 
-        if (window.location.pathname != "/livin-furniture-store/AllProducts") { 
+        if (window.location.pathname != "/AllProducts") { 
             if (getSearchState() == 1) { 
                 changeSearchState();
             }
@@ -26,7 +26,7 @@ const Navbar = () => {
     }, [window.location.pathname])
     
     const toggleSearch = () => { 
-        if (window.location.pathname == "/livin-furniture-store/AllProducts") { 
+        if (window.location.pathname == "/AllProducts") { 
             if (getSearchState() == 1)
                 changeSearchState();
             else
@@ -43,7 +43,7 @@ const Navbar = () => {
     
     
     const goToTest = () => { 
-        if (window.location.pathname != "/livin-furniture-store/" ) { 
+        if (window.location.pathname != "/" ) { 
             setTimeout(() => { 
                 document.getElementById("test")?.scrollIntoView();
             }, 750)
@@ -71,21 +71,21 @@ const Navbar = () => {
             <div className=" relative flex justify-between items-center bg-sec-color ">
                 <div className="flex gap-8 max-sm:h-[72px]  items-center sm:justify-between min-[1285px]:pr-28 min-[1300px]:pr-44   py-5 px-5 sm:px-12 lg:px-20 xl:px-44  w-full">
                     <FontAwesomeIcon onClick={() => toggleList()} icon={faBarsStaggered} size="xl" className=" cursor-pointer trans hover:opacity-75 sm:hidden" />
-                    <Link to="/livin-furniture-store/" >
+                    <Link to="/" >
                         <h1 className=" text-xl font-bold sm:text-2xl pointer-events-none">Livin.</h1>
                     </Link>
                     
                     <ul className="max-sm:hidden flex gap-4 md:gap-10 min-[900px]:gap-16">
                         
                         <li className={`flex gap-2 trans  hover:text-black items-center justify-center cursor-pointer`}>
-                        <Link to="/livin-furniture-store/" >
+                        <Link to="/" >
                             <span className={`${getOpenPage() === "home" ? "text-black" : " text-dark-gray"}`}>
                                 Home
                             </span>
                         </Link>
                         </li>
 
-                        <Link to="/livin-furniture-store/AllProducts" >
+                        <Link to="/AllProducts" >
                             <li className={`flex gap-2  trans  items-center justify-center cursor-pointer`}>
                                 <span className={`${getOpenPage() == "product" ? "text-black" : " text-dark-gray"} hover:text-black trans`}>
                                     Products
@@ -94,7 +94,7 @@ const Navbar = () => {
                             </li>
                         </Link>
 
-                        <Link to="/livin-furniture-store/InCart">
+                        <Link to="/InCart">
                             <li className={`flex text-dark-gray  trans items-center justify-center cursor-pointer`}>
                                 <span className={`${getOpenPage() == "cart" ? "text-black" : "text-dark-gray"} hover:text-black trans`}>
                                     Cart
@@ -102,7 +102,7 @@ const Navbar = () => {
                             </li>
                         </Link>
                         
-                        <Link to="/livin-furniture-store/" onClick={goToTest}>
+                        <Link to="/" onClick={goToTest}>
                             <li  className={`flex  text-dark-gray gap-2 trans hover:text-black items-center justify-center cursor-pointer`}>
                                 <span className=" ">
                                     About
@@ -116,7 +116,7 @@ const Navbar = () => {
                 {/* search 1  */}
                 <div   className=" max-lg:hidden  bg-main-white p-2 flex items-center  gap-2">
                     <FontAwesomeIcon  icon={faMagnifyingGlass}  className="  cursor-pointer trans hover:opacity-75 text-sm" />
-                    <Link to="/livin-furniture-store/AllProducts">
+                    <Link to="/AllProducts">
                     <input  value={looking} autoFocus  onChange={handleSearch} type="text" name="" id="search" className="bg-main-white outline-none text-sm w-48 xl:w-56" placeholder="What are you searching for ?" />
                     </Link>
                 </div>
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <FontAwesomeIcon onClick={() => themeChange()} icon={faPaintRoller} size="lg" className={theme == 1 ?" cursor-pointer text-main-color scale-[150%] rotate-180  trans hover:opacity-50" : " cursor-pointer text-main-color trans  hover:opacity-50" } />
                 <FontAwesomeIcon onClick={() => toggleSearch()} icon={faMagnifyingGlass} size="lg" className=" lg:hidden cursor-pointer trans hover:opacity-75" />
                 <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
-                    <Link to="/livin-furniture-store/InCart" >
+                    <Link to="/InCart" >
                         <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
                     </Link>
                     {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}
@@ -145,11 +145,11 @@ const Navbar = () => {
 
                 {getSearchState() != 1 && <div className="lg:hidden flex gap-8 justify-around items-center py-6  bg-main-white w-1/2 mx-auto relative">
                 <FontAwesomeIcon onClick={() => themeChange()} icon={faPaintRoller} size="lg" className={theme == 1 ?" cursor-pointer text-main-color scale-[150%] rotate-180  trans hover:opacity-50" : " cursor-pointer text-main-color trans  hover:opacity-50" } />
-                <Link to="/livin-furniture-store/AllProducts">
+                <Link to="/AllProducts">
                     <FontAwesomeIcon onClick={() => toggleSearch()} icon={faMagnifyingGlass} size="lg" className=" lg:hidden cursor-pointer trans hover:opacity-75" />
                 </Link>
                 <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
-                    <Link to="/livin-furniture-store/InCart" >
+                    <Link to="/InCart" >
                         <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
                     </Link>
                     {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}

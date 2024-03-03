@@ -1,27 +1,25 @@
 
-import { MainCart} from './context/Cart';
+import { MainCart, useCart} from './context/Cart';
 import Navbar from './components/Navbar';
 import AnimatedPages from './utilites/AnimatedPages';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import OpenedProd from './components/OpenedProd';
-import AllProducts from './pages/AllProducts';
-import InCart from './pages/InCart';
+import { useEffect } from 'react';
+
 
 const App = () => {
-  
-  
+  const {getSearchState, changeSearchState} = useCart();
+  useEffect(() => { 
+    if (location.pathname != "/AllProducts") { 
+      if (getSearchState() == 1)
+        changeSearchState();
+    }
+  }, [location.pathname])
   
   return (
     <div className=''>
       <MainCart>
         <Navbar />
-        <Routes location={location} key={location.pathname}>
-                <Route path="/livin-furniture-store/" element={<Home />} />
-                <Route path="/livin-furniture-store/Product" element={<OpenedProd  />} />
-                <Route path="/livin-furniture-store/AllProducts" element={<AllProducts  />} />
-                <Route path="/livin-furniture-store/InCart" element={<InCart  />} />
-        </Routes>
+        
+        <AnimatedPages />
       </MainCart>
     </div>
   )

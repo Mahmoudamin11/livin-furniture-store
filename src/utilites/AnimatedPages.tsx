@@ -15,12 +15,12 @@ const AnimatedPages = () => {
     <div onClick={() => closeTheme()} >
         <AnimatePresence>
 
-            {/* <Routes location={location} key={location.pathname}>
+            <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
                 <Route path="/Product" element={<OpenedProd  />} />
                 <Route path="/AllProducts" element={<AllProducts  />} />
                 <Route path="/InCart" element={<InCart  />} />
-            </Routes> */}
+            </Routes>
 
         </AnimatePresence>
     </div>
