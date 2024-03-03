@@ -15,7 +15,11 @@ const Navbar = () => {
     
     const {totalQuantity, getOpenPage,themeChange, theme, toggleList, changeSearchedProd, changeSearchState, getSearchState} = useCart();
     
-    
+    const closeTheme = () => { 
+        if (theme == 1) { 
+            themeChange();
+        }
+    }
 
     useEffect(() => { 
         if (window.location.pathname != "/AllProducts") { 
@@ -68,7 +72,7 @@ const Navbar = () => {
     return ( 
         <div  className={getSearchState() != 1 ? "grid grid-cols-[55%_1fr] sm:grid-cols-[70%_1fr] md:grid-cols-[80%_1fr] w-full" : "grid w-full max-sm:grid-cols-1 sm:grid-cols-[70%_1fr] md:grid-cols-[80%_1fr]"}>
 
-            <div className=" relative flex justify-between items-center bg-sec-color ">
+            <div onClick={closeTheme} className=" relative flex justify-between items-center bg-sec-color ">
                 <div className="flex gap-8 max-sm:h-[72px]  items-center sm:justify-between min-[1285px]:pr-28 min-[1300px]:pr-44   py-5 px-5 sm:px-12 lg:px-20 xl:px-44  w-full">
                     <FontAwesomeIcon onClick={() => toggleList()} icon={faBarsStaggered} size="xl" className=" cursor-pointer trans hover:opacity-75 sm:hidden" />
                     <Link to="/" >
@@ -117,12 +121,12 @@ const Navbar = () => {
                 <div   className=" max-lg:hidden  bg-main-white p-2 flex items-center  gap-2">
                     <FontAwesomeIcon  icon={faMagnifyingGlass}  className="  cursor-pointer trans hover:opacity-75 text-sm" />
                     <Link to="/AllProducts">
-                    <input  value={looking} autoFocus  onChange={handleSearch} type="text" name="" id="search" className="bg-main-white outline-none text-sm w-48 xl:w-56" placeholder="What are you searching for ?" />
+                    <input  value={looking}   onChange={handleSearch} type="text" name="" id="search" className="bg-main-white outline-none text-sm w-48 xl:w-56" placeholder="What are you searching for ?" />
                     </Link>
                 </div>
 
                 {/* search 2  */}
-                {getSearchState() == 1 && <div className="bg-main-white lg:hidden absolute h-[72px]  w-full top-0  left-0 flex justify-around items-center">
+                {getSearchState() == 1 && <div className="bg-main-white shadow-md lg:hidden absolute h-[72px]  w-full top-0  left-0 flex justify-around items-center">
                     <input type="text" value={looking}  autoFocus onChange={handleSearch} className=" w-2/3  outline-none" placeholder="What are you searching for ?" />
                     <FontAwesomeIcon onClick={() => handleCloseSearch()} icon={faXmark} size="xl" className="mr-2 cursor-pointer trans hover:opacity-75" />
                 </div>}

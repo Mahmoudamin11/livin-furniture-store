@@ -8,7 +8,7 @@ import CartIcon from '../components/CartIcon';
 
 const AllProducts = () => {
     const location  = useLocation();
-    const {products, changeOpenPage, getSearchedProd, getSearchState, changeSearchState} = useCart();
+    const {products, changeOpenPage, getSearchedProd, getSearchState, changeSearchState, changeSearchedProd} = useCart();
     const [types] = useState([
         "All",
         "Chair",
@@ -29,7 +29,8 @@ const AllProducts = () => {
     useEffect(() => { 
         window.scrollTo(0, 0);
         changeOpenPage("product");
-        
+        if (getSearchState() == 0) 
+            changeSearchState()
     }, [location.pathname])
 
     const changeShownArr = () => { 
@@ -71,15 +72,10 @@ const AllProducts = () => {
         
     }, [getSearchedProd()]);
 
-    const closeSearch = () => { 
-        if (getSearchState() == 1) { 
-            changeSearchState();
-        }
-    }
 
 
   return (
-    <motion.div onClick={closeSearch} className='py-12  mob-p min-h-[90vh]'
+    <motion.div className='py-12  mob-p min-h-[90vh]'
     initial={{opacity:0}}
     animate={{opacity:"100%"}}
     exit={{opacity:0}}
