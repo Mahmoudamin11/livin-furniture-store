@@ -16,10 +16,10 @@ const AnimatedPages = () => {
         <AnimatePresence>
 
             <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
-                <Route path="/Product" element={<OpenedProd  />} />
-                <Route path="/AllProducts" element={<AllProducts  />} />
-                <Route path="/InCart" element={<InCart  />} />
+                <Route path="/livin-furniture-store/" element={<Home />} />
+                <Route path="/livin-furniture-store/Product" element={<OpenedProd  />} />
+                <Route path="/livin-furniture-store/AllProducts" element={<AllProducts  />} />
+                <Route path="/livin-furniture-store/InCart" element={<InCart  />} />
             </Routes>
 
         </AnimatePresence>

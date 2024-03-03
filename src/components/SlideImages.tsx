@@ -53,7 +53,7 @@ const SlideImages = () => {
         <div className='flex max-[600px]:hidden flex-col absolute bottom-0 left-[5%] w-1/2 min-[680px]:w-[40%] min-[860px]:w-[30%]  bg-white/65 trans hover:bg-white/75 cursor-pointer  mt-9 p-4 min-[1000px]:p-8 lg:p-10 xl:py-14 xl:px-10 lg:w-[40%] xl:w-[30%]  gap-5 xl:gap-8'>
             <h2 className='font-bold text-3xl  min-[900px]:text-4xl lg:text-5xl xl:leading-[55px]'>We  Help You Make Unique Interior</h2>
             <p className='text-black/40 lg:text-lg'>We will provide consulting services to create the modern interior of your dreams.</p>
-            <Link to="/AllProducts" onClick={() => changeOpenPage("product")}><button className='w-1/2  bg-main-color py-3 trans hover:opacity-85 text-main-white font-bold'>Shop Now</button></Link>
+            <Link to="/livin-furniture-store/AllProducts" onClick={() => changeOpenPage("product")}><button className='w-1/2  bg-main-color py-3 trans hover:opacity-85 text-main-white font-bold'>Shop Now</button></Link>
         </div>
         
         <div className='group bg-white/65 cursor-pointer trans hover:bg-white/75 p-2 md:p-5 absolute bottom-0 right-[8%] flex flex-col gap-1  xl:p-8'>
@@ -100,7 +100,7 @@ const SlideImages = () => {
           <div className='flex min-[600px]:hidden flex-col mob-p mt-9  gap-5'>
             <h2 className='head'>We  Help You Make Unique Interior</h2>
             <p className='text-dark-gray text-center'>We will provide consulting services to create the modern interior of your dreams.</p>
-            <Link to="/AllProducts" onClick={() => changeOpenPage("product")}>
+            <Link to="/livin-furniture-store/AllProducts" onClick={() => changeOpenPage("product")}>
               <button className='w-full bg-main-color py-4 trans hover:opacity-75 text-main-white font-bold'>Shop Now</button>
             </Link>
           </div>

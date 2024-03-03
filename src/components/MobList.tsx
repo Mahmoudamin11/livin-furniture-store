@@ -13,7 +13,7 @@ const MobList = () => {
 
   const goToTest = () => { 
     toggleList();
-    if (window.location.pathname != "/" ) { 
+    if (window.location.pathname != "/livin-furniture-store/" ) { 
         setTimeout(() => { 
             document.getElementById("test")?.scrollIntoView();
         }, 750)
@@ -41,27 +41,27 @@ const MobList = () => {
     <div>
       <div className={getList() == 1 ?" absolute w-[70%] z-50 trans top-0 left-0 h-full flex flex-col gap-12 py-5 px-5 bg-sec-color shadow-2xl shadow-main-color" : " absolute w-[70%] z-50 trans top-0 left-[-200%] h-full flex flex-col gap-12 py-5 px-5 bg-sec-color shadow-2xl shadow-main-color"}>
           <div className="flex justify-between items-center">
-              <Link to="/" >
+              <Link to="/livin-furniture-store/" >
                 <h1 className={" text-xl font-bold"}>Livin.</h1>
               </Link>
               <FontAwesomeIcon onClick={() => closeList()}  icon={faXmark} size="xl" className=" cursor-pointer trans hover:opacity-75"  />
           </div>
           <ul className="flex flex-col gap-10 text-lg text-dark-gray  ">
-              <Link to="/" onClick={closeList} className=" w-fit"  >
+              <Link to="/livin-furniture-store/" onClick={closeList} className=" w-fit"  >
                     <span className={`${getOpenPage() === "home" ? "text-black" : " text-dark-gray"} hover:pl-3  trans`}>
                         Home
                     </span>
               </Link>
-              <Link to="/" onClick={goToTest} className="w-fit">
+              <Link to="/livin-furniture-store/" onClick={goToTest} className="w-fit">
                 <li className="trans hover:pl-3  hover:text-main-black cursor-pointer">About</li>
               </Link>
-              <Link to="/AllProducts" onClick={closeList} className="w-fit">
+              <Link to="/livin-furniture-store/AllProducts" onClick={closeList} className="w-fit">
       
                       <span className={`${getOpenPage() == "product" ? "text-black" : " text-dark-gray"} trans hover:text-black hover:pl-3  `}>
                           Products
                       </span>
               </Link>
-              <Link to="/InCart" onClick={closeList} className="w-fit" >
+              <Link to="/livin-furniture-store/InCart" onClick={closeList} className="w-fit" >
                 <li className={`trans hover:pl-3  hover:text-main-black ${getOpenPage() == "cart" ? "text-black" : "text-dark-gray"} cursor-pointer`}>Cart</li>
               </Link>
           </ul>

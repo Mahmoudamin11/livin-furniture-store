@@ -21,7 +21,7 @@ const Minimalist = () => {
             className='specialTitle'>Minimalist</motion.span></motion.h3>
             <p className=' text-center text-dark-gray min-[750px]:text-left lg:text-lg'>More individuals are seeking for soothing decorations in the middle of more stressful. This type of 'minimalist' interior design, is commonly employed to create a relax atmosphere.</p>
             
-            <Link to="/AllProducts" onClick={() => changeOpenPage("product")} className='w-1/2  bg-main-color py-3 min-[750px]:py-2  trans hover:opacity-85 text-main-white font-bold text-center'>
+            <Link to="/livin-furniture-store/AllProducts" onClick={() => changeOpenPage("product")} className='w-1/2  bg-main-color py-3 min-[750px]:py-2  trans hover:opacity-85 text-main-white font-bold text-center'>
               <button className=' outline-none'>Shop Now</button>
             </Link>
             

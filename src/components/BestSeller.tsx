@@ -73,7 +73,7 @@ const BestSeller = () => {
           </span>
           {/*  */}
       </div>
-      <Link to="/AllProducts" className=" mx-auto mt-12 w-full flex items-center justify-center" onClick={() => changeOpenPage("product")}>
+      <Link to="/livin-furniture-store/AllProducts" className=" mx-auto mt-12 w-full flex items-center justify-center" onClick={() => changeOpenPage("product")}>
                 <span className="group ml-2 trans cursor-pointer py-2 px-6 flex  items-center justify-center  text-white bg-main-color  hover:opacity-85">
                     See All
                     <FontAwesomeIcon className="text-[14px] ml-2   group-hover:opacity-100 trans group-hover:text-main-black  group-hover:translate-x-[2px]" icon={faArrowRightLong} />
