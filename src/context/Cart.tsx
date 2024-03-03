@@ -275,7 +275,10 @@ export function MainCart({children}:child) {
       }
 
     return( 
-        <cartContext.Provider value={{changeSearchState, getSearchState, changeSearchedProd, getSearchedProd,theme,clearCart, toggleCurrTheme,getProducts,  getCurrTheme, toggleList, getList, List , changeOpenPage, getOpenPage , openPage, themeChange, closeTheme, products,getTotalItems, chooseProd,ChosenProd,getChosenProd,  increaseQ, decreaseQ, removeQ, totalQuantity, totalPrice}}>
+        <cartContext.Provider value={{changeSearchState, getSearchState, changeSearchedProd, getSearchedProd,theme,clearCart, toggleCurrTheme,getProducts,  
+        getCurrTheme, toggleList, getList, List , changeOpenPage, getOpenPage , openPage, themeChange, 
+        closeTheme, products,getTotalItems, chooseProd,ChosenProd,getChosenProd,  increaseQ, decreaseQ,
+        removeQ, totalQuantity, totalPrice}}>
             {children}
         </cartContext.Provider>
     )

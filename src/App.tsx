@@ -6,13 +6,7 @@ import { useEffect } from 'react';
 
 
 const App = () => {
-  const {getSearchState, changeSearchState} = useCart();
-  useEffect(() => { 
-    if (location.pathname != "/AllProducts") { 
-      if (getSearchState() == 1)
-        changeSearchState();
-    }
-  }, [location.pathname])
+  
   
   return (
     <div className=''>
