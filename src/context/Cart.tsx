@@ -102,9 +102,9 @@ const data = [
 ]
 
 
-const initstorage = localStorage.getItem("theme") != null ? JSON.parse(localStorage.getItem("theme")!) : 1 ;
-const chosenProd = localStorage.getItem("chosenProduct") != null ? JSON.parse(localStorage.getItem("chosenProduct")!) : "" ;
-const totalQ = localStorage.getItem("totalQ") ! ? JSON.parse(localStorage.getItem("totalQ")!) : 0 ;
+const initstorage = localStorage.getItem("theme")  ? JSON.parse(localStorage.getItem("theme")!) : 1 ;
+const chosenProd = localStorage.getItem("chosenProduct")  ? JSON.parse(localStorage.getItem("chosenProduct")!) : "" ;
+const totalQ = localStorage.getItem("totalQ")  ? JSON.parse(localStorage.getItem("totalQ")!) : 0 ;
 const cartProds = localStorage.getItem("incart")   ? JSON.parse(localStorage.getItem("incart")!) : data ;
 
 // localStorage.clear()
