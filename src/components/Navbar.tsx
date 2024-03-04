@@ -21,28 +21,8 @@ const Navbar = () => {
         }
     }
 
-    useEffect(() => { 
-        if (window.location.pathname != "/AllProducts") { 
-            if (getSearchState() == 1) { 
-                changeSearchState();
-            }
-        }
-    }, [window.location.pathname])
-    
     const toggleSearch = () => { 
-        if (window.location.pathname == "/AllProducts") { 
-            if (getSearchState() == 1)
-                changeSearchState();
-            else
-                changeSearchState();
-        }
-        else { 
-            if (getSearchState() == 1)
-                changeSearchState();
-            else { 
-                changeSearchState();
-            }
-        }
+        changeSearchState();
     }
     
     
@@ -136,12 +116,12 @@ const Navbar = () => {
             { <div className="max-lg:hidden flex gap-8 justify-around items-center py-6  bg-main-white w-1/2 mx-auto relative">
                 <FontAwesomeIcon onClick={() => themeChange()} icon={faPaintRoller} size="lg" className={theme == 1 ?" cursor-pointer text-main-color scale-[150%] rotate-180  trans hover:opacity-50" : " cursor-pointer text-main-color trans  hover:opacity-50" } />
                 <FontAwesomeIcon onClick={() => toggleSearch()} icon={faMagnifyingGlass} size="lg" className=" lg:hidden cursor-pointer trans hover:opacity-75" />
-                <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
-                    <Link to="/InCart" >
-                        <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
-                    </Link>
-                    {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}
-                </div>
+                <Link to="/InCart" >
+                    <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
+                            <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
+                        {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}
+                    </div>
+                </Link>
                 {/* <FontAwesomeIcon icon={faHeart} size="lg" className=" text-dark-gray trans hover:opacity-75 cursor-pointer" /> */}
                 {<ThemeChanger pos={theme} />}
                 </div>}
@@ -152,12 +132,12 @@ const Navbar = () => {
                 <Link to="/AllProducts">
                     <FontAwesomeIcon onClick={() => toggleSearch()} icon={faMagnifyingGlass} size="lg" className=" lg:hidden cursor-pointer trans hover:opacity-75" />
                 </Link>
-                <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
-                    <Link to="/InCart" >
-                        <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
-                    </Link>
-                    {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}
-                </div>
+                <Link to="/InCart" >
+                    <div className=" relative h-fit w-fit cursor-pointer trans hover:opacity-75">
+                            <FontAwesomeIcon icon={faCartShopping} size="lg" className={` ${getOpenPage() == "cart" ? "text-main-color" : "text-dark-gray"} `} />
+                        {totalQuantity > 0 && <span className={` absolute top-0 -translate-y-1/2 -right-3    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full ${getOpenPage() == "cart" ? "bg-dark-gray" : "bg-main-color"} font-bold`}>{totalQuantity}</span>}
+                    </div>
+                </Link>
                 {/* <FontAwesomeIcon icon={faHeart} size="lg" className=" text-dark-gray trans hover:opacity-75 cursor-pointer" /> */}
                 {<ThemeChanger pos={theme} />}
                 </div>}

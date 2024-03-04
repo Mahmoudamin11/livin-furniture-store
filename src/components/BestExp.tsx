@@ -1,9 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
-import img from '../assets/best exp.png';
+import green from '../assets/home-design.jpg';
+import blue from '../assets/blue-hall.jpg';
+import purple from '../assets/purple-hall.jpg';
 import { motion } from "framer-motion";
+import { useCart } from "../context/Cart";
 
 const BestExp = () => {
+    const {getCurrTheme} = useCart();
     const stats = [
         {num:15 ,txt:'Years', txt2: 'experience'},
         {num:53 ,txt:'Gained', txt2: 'certificates'},
@@ -38,7 +42,7 @@ const BestExp = () => {
                     <FontAwesomeIcon className="text-2xl group-hover:opacity-100 trans group-hover:text-main-black  group-hover:translate-x-2" icon={faArrowRightLong} />
                 </button>
             </div>
-            <img src={img} alt="" className="bestEXP sm:w-[50%] min-[900px]:w-[40%] xl:w-[35%] w-full relative " />
+            <img src={getCurrTheme() == 1 ? green : getCurrTheme() == 2 ? blue : purple} alt="" className="bestEXP sm:w-[50%] min-[900px]:w-[40%] xl:w-[35%] w-full relative " />
         </div>
 
     </motion.div>

@@ -21,9 +21,9 @@ const CartIcon = () => {
     const {totalQuantity} = useCart();
   return (
     <div>
-        {<div className={` fixed  bottom-14  right-5 sm:right-10    flex items-center gap-4 ${top > 500 ? "translate-x-0" : " translate-x-56"} trans  `}>
-          <Link to="/inCart">
-            <div className={` flex items-center cursor-pointer  shadow-md rounded-sm justify-center w-12 h-12 relative bg-main-color text-white trans hover:opacity-85 ${totalQuantity == 0 ? "translate-x-52" : "translate-x-0"}`}>
+        {<div className={` fixed  bottom-6  right-5 sm:right-10    flex flex-col items-center gap-4 ${top > 500 ? "translate-x-0" : " translate-x-56"} trans  `}>
+          <Link to="/InCart">
+            <div className={` flex  items-center cursor-pointer  shadow-md rounded-sm justify-center w-12 h-12 relative bg-main-color text-white trans hover:opacity-85 ${totalQuantity == 0 ? "translate-x-52" : "translate-x-0"}`}>
                 <FontAwesomeIcon icon={faCartShopping} size="lg" className=" " />
                 {totalQuantity > 0 && <span className=" absolute top-0 -translate-y-1/2 -right-2    text-white flex items-center justify-center text-xs w-6 h-6 rounded-full bg-red-500 font-bold">{totalQuantity}</span>}
             </div>

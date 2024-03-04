@@ -8,7 +8,7 @@ import CartIcon from '../components/CartIcon';
 
 const AllProducts = () => {
     const location  = useLocation();
-    const {products, changeOpenPage, getSearchedProd, getSearchState, changeSearchState, changeSearchedProd} = useCart();
+    const {products, changeOpenPage, getSearchedProd, changeSearchState, getSearchState} = useCart();
     const [types] = useState([
         "All",
         "Chair",
@@ -19,18 +19,15 @@ const AllProducts = () => {
     ]);
 
     const [shownArr, setshownArr] = useState(products);
-
-    
     const [chosenType, setchosenType] = useState("All");
 
     const SetType = (type:string) => { 
         setchosenType(type);
     }
+
     useEffect(() => { 
         window.scrollTo(0, 0);
         changeOpenPage("product");
-        if (getSearchState() == 0) 
-            changeSearchState()
     }, [location.pathname])
 
     const changeShownArr = () => { 
@@ -69,13 +66,26 @@ const AllProducts = () => {
 
     useEffect(() => { 
         changeShownArr();
-        
     }, [getSearchedProd()]);
 
+    useEffect(() => { 
+        if (window.location.pathname != "/AllProducts") { 
+            if (getSearchState() == 1) { 
+                changeSearchState();
+            }
+        }
+        else { 
+            if (getSearchedProd() != "") { 
+                if (getSearchState() == 0 ) { 
+                    changeSearchState();
+                }
+            }
+        }
+    }, [window.location.pathname])
 
 
   return (
-    <motion.div className='py-12  mob-p min-h-[90vh]'
+    <motion.div className='py-6  mob-p min-h-[90vh]'
     initial={{opacity:0}}
     animate={{opacity:"100%"}}
     exit={{opacity:0}}

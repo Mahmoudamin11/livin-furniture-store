@@ -32,7 +32,7 @@ const SlideImages = () => {
 
   return (
     <div className=''>
-      <div className='min-[600px]:hidden relative h-80'>
+      <div draggable= "true" onDrag={() => next()} className='min-[600px]:hidden relative h-80'>
         {<img loading='lazy' src={hallp1} alt="" className={`h-80 w-full ${img == 1 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
         {<img loading='lazy' src={hallp2} alt="" className={`h-80 w-full ${img == 2 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
         {<img loading='lazy' src={hallp3} alt="" className={`h-80 w-full ${img == 3 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} /> }
@@ -68,11 +68,11 @@ const SlideImages = () => {
       </div>
 
       
-      <div className='w-full flex gap-5 '>
-        <div className='w-[40%] min-[450px]:w-[51%] sm:w-[60%] md:w-[70%] lg:w-[78%] bg-sec-color py-2'>
-        </div>
+      <div className='w-full flex gap-2 '>
+        <div className='w-[40%] min-[450px]:w-[51%] sm:w-[60%] md:w-[70%] lg:w-[78%] bg-sec-color py-2' />
+        
 
-        <ul className=' bg-main-white flex gap-5 py-2 items-center'>
+        <ul className=' bg-main-white flex gap-5 py-2 items-center mx-auto'>
             <div className=' flex gap-5 min-[600px]:hidden'>
               <li onClick={() => circleImg(1)} className={img == 1 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
               <li onClick={() => circleImg(2)} className={img == 2 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
@@ -84,11 +84,13 @@ const SlideImages = () => {
               <li onClick={() => circleImg(2)} className={img == 2 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
             </div>
           
-            <div id='leftAngle' onClick={() => prev()} className='flex trans hover:opacity-65 rotate-180 items-center justify-center text-main-color bg-sec-color w-10 h-10 p-2 rounded-full cursor-pointer trans'>
-              <FontAwesomeIcon  icon={faAngleRight} size='lg' />
-            </div>
-            <div onClick={() => next()} className='rightAngle trans hover:opacity-65'>
-              <FontAwesomeIcon  icon={faAngleRight} size='lg' />
+            <div className='flex gap-4'>
+              <div id='leftAngle' onClick={() => prev()} className='flex trans hover:opacity-65 rotate-180 items-center justify-center text-main-color bg-sec-color w-10 h-10 p-2 rounded-full cursor-pointer trans'>
+                <FontAwesomeIcon  icon={faAngleRight} size='lg' />
+              </div>
+              <div onClick={() => next()} className='rightAngle trans hover:opacity-65'>
+                <FontAwesomeIcon  icon={faAngleRight} size='lg' />
+              </div>
             </div>
           
 

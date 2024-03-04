@@ -9,12 +9,13 @@ import { useEffect, useState } from "react";
 
 
 const OpenedProd = () => {
-    const {products, increaseQ, decreaseQ, removeQ, getChosenProd, chooseProd} = useCart();
+    const {products, increaseQ, decreaseQ, removeQ, getChosenProd, chooseProd, changeOpenPage} = useCart();
     const item = products.find((item) => item.head === getChosenProd());
     const location = useLocation();
     const [shower, setShower] = useState(1);
     useEffect(() => { 
         window.scrollTo(0, 0);
+        changeOpenPage("product")
     }, [location.pathname])
 
     const toggleshower = () => { 

@@ -13,7 +13,7 @@ import theme3LG from '../assets/theme3lg.png'
 import theme3 from '../assets/theme3.png'
 
 const InCart = () => {
-    const {totalQuantity,clearCart,  products, getTotalItems, removeQ, increaseQ , decreaseQ, totalPrice, changeOpenPage, getCurrTheme} = useCart();
+    const {totalQuantity,clearCart,  products, getTotalItems, removeQ, increaseQ , chooseProd , decreaseQ, totalPrice, changeOpenPage, getCurrTheme} = useCart();
 
     const loc  = useLocation();
     useEffect(() => { 
@@ -43,35 +43,38 @@ const InCart = () => {
                   
                   {
                     products.map((item) => (
-                      <div key={item.head} className={`flex ${item.quantity > 0 ? "block" : "hidden"} sm:mr-5 justify-between items-center  border-b-[1px] border-solid border-dark-gray py-4 `}>
-                        
-                          <div className=' flex gap-6 items-center'>
-                            <img src={item.img} className=' w-[100px] h-[100px]' alt="" />
-                            <div className=' flex flex-col w-[120px]'>
-                                <h1 className=' text-2xl font-bold'>{item.head}</h1>
-                                <div className=' flex gap-2 items-center text-sm'>
-                                  <h1 className=' text-dark-gray '>{item.type}</h1>
-                                  <span className=''><span className='text-main-color'>$</span>{item.price}</span>
-                                </div>
+                      <div key={item.head} className={`group flex trans cursor-pointer ${item.quantity > 0 ? "block" : "hidden"} sm:mr-5 justify-between items-center  border-b-[1px] border-solid border-dark-gray py-4 `}>
+                          
+                          <Link to="/Product" onClick={() => chooseProd(item.head)}>
+                            <div className='hover:opacity-70 trans flex gap-6 items-center'>
+                              <img src={item.img} className=' w-[100px] h-[100px]' alt="" />
+                              <div className=' flex flex-col w-[120px]'>
+                                  <h1 className=' text-2xl font-bold'>{item.head}</h1>
+                                  <div className=' flex gap-2 items-center text-sm'>
+                                    <h1 className=' text-dark-gray '>{item.type}</h1>
+                                    <span className=''><span className='text-main-color'>$</span>{item.price}</span>
+                                  </div>
+                              </div>
                             </div>
-                          </div>
+                          </Link>
 
-                          <div className=" flex  w-44 justify-center gap-8">
-                            <div>
-                              <FontAwesomeIcon onClick={() => removeQ(item.head)} icon={faTrashCan} size="lg" className=" text-red-400 cursor-pointer trans hover:text-red-600" />
+                            <div className=" flex  w-44 justify-center gap-8">
+                              <div>
+                                <FontAwesomeIcon onClick={() => removeQ(item.head)} icon={faTrashCan} size="lg" className=" text-red-400 cursor-pointer trans hover:text-red-600" />
+                              </div>
+                              <div className="flex gap-3 xl:gap-5">
+                                <span onClick={() => decreaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">-</span>
+                                <span className=" font-bold text-xl w-5 flex items-center justify-center">{item.quantity}</span>
+                                <span onClick={() => increaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">+</span>
+                              </div>
                             </div>
-                            <div className="flex gap-3 xl:gap-5">
-                              <span onClick={() => decreaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">-</span>
-                              <span className=" font-bold text-xl w-5 flex items-center justify-center">{item.quantity}</span>
-                              <span onClick={() => increaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">+</span>
-                            </div>
+                            
+                              <div className='flex justify-end font-bold w-[55px] text-main-color'>
+                                $<span className='text-black '>{item.price * item.quantity}</span>
+                              </div>
+                          
+                          
                           </div>
-
-                          <div className='flex justify-end font-bold w-[55px] text-main-color'>
-                            $<span className='text-black '>{item.price * item.quantity}</span>
-                          </div>
-                        
-                        </div>
                     ))
                   }
                 </div>
@@ -83,44 +86,46 @@ const InCart = () => {
                   
                   {
                     products.map((item) => (
-                      <div key={item.head} className={`flex lg:hidden ${item.quantity > 0 ? "block" : "hidden"} sm:mr-5 justify-between items-center  border-b-[1px] border-solid border-dark-gray py-4 `}>
-                        
-                          <div className=' flex gap-3 items-center w-full'>
-                            {/* img */}
-                            <div className=' flex flex-col justify-center items-center'>
-                              <img src={item.img} className=' w-[100px] h-[100px]' alt="" />
-                            </div>
-                            <div className=' flex flex-col items-baseline  gap-5 w-[80%] mr-3'>
-                              {/* title , type , price  */}
-                              <div className=' flex items-center justify-between w-full'>
-                                  <div className=' flex flex-col'>
-                                    <h1 className=' text-2xl font-bold'>{item.head}</h1>
-                                    <h1 className=' text-dark-gray '>{item.type}</h1>
-                                  </div>
-                                  <span className=''><span className='text-main-color'>$</span>{item.price}</span>
-                              </div>
-
-                              {/* Quantity control & total price */}
-                              { <div className=" flex w-full justify-between    gap-5 items-center">
-                                    <div className='flex justify-start font-bold w-[55px]  text-main-color'>
-                                      $<span className='text-black '>{item.price * item.quantity}</span>
-                                    </div>
-                                      <div className='flex items-center justify-center gap-5'>
-                                        <div>
-                                          <FontAwesomeIcon onClick={() => removeQ(item.head)} icon={faTrashCan} size="lg" className=" text-red-400 cursor-pointer trans hover:text-red-600" />
-                                        </div>
-                                        <div className="flex gap-5">
-                                          <span onClick={() => decreaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">-</span>
-                                          <span className=" font-bold text-xl w-5 flex items-center justify-center">{item.quantity}</span>
-                                          <span onClick={() => increaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">+</span>
-                                        </div>
-                                      </div>
-                                  </div>}
-                              
-                            </div>
-                          </div>
+                      <Link to="/Product" className=' '>
+                        <div key={item.head} className={`flex lg:hidden trans hover:bg-light-gray cursor-pointer ${item.quantity > 0 ? "block" : "hidden"} sm:mr-5 justify-between items-center  border-b-[1px] border-solid border-dark-gray py-4 `}>
                           
-                        </div>
+                            <div className=' flex gap-3 items-center w-full'>
+                              {/* img */}
+                              <div className=' flex flex-col w-[120px] justify-center items-center'>
+                                <img src={item.img} className=' w-[100px] h-[100px]' alt="" />
+                              </div>
+                              <div className=' flex flex-col items-baseline  gap-5 w-[70%] mr-3'>
+                                {/* title , type , price  */}
+                                <div className=' flex items-center justify-between w-full'>
+                                    <div className=' flex flex-col'>
+                                      <h1 className=' text-2xl font-bold'>{item.head}</h1>
+                                      <h1 className=' text-dark-gray '>{item.type}</h1>
+                                    </div>
+                                    <span className=''><span className='text-main-color'>$</span>{item.price}</span>
+                                </div>
+
+                                {/* Quantity control & total price */}
+                                { <div className=" flex w-full justify-between    gap-5 items-center">
+                                      <div className='flex justify-start font-bold w-[55px]  text-main-color'>
+                                        $<span className='text-black '>{item.price * item.quantity}</span>
+                                      </div>
+                                        <div className='flex items-center justify-center gap-5'>
+                                          <div>
+                                            <FontAwesomeIcon onClick={() => removeQ(item.head)} icon={faTrashCan} size="lg" className=" text-red-400 cursor-pointer trans hover:text-red-600" />
+                                          </div>
+                                          <div className="flex gap-5">
+                                            <span onClick={() => decreaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">-</span>
+                                            <span className=" font-bold text-xl w-5 flex items-center justify-center">{item.quantity}</span>
+                                            <span onClick={() => increaseQ(item.head)} className=" bg-main-color text-2xl text-white w-7 h-7 trans hover:opacity-85    flex items-center justify-center shadow-lg cursor-pointer">+</span>
+                                          </div>
+                                        </div>
+                                    </div>}
+                                
+                              </div>
+                            </div>
+                            
+                          </div>
+                      </Link>
                     ))
                   }
                 </div>

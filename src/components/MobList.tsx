@@ -39,7 +39,7 @@ const MobList = () => {
     
 
     <div>
-      <div className={getList() == 1 ?" absolute w-[70%] z-50 trans top-0 left-0 h-full flex flex-col gap-12 py-5 px-5 bg-sec-color shadow-2xl shadow-main-color" : " absolute w-[70%] z-50 trans top-0 left-[-200%] h-full flex flex-col gap-12 py-5 px-5 bg-sec-color shadow-2xl shadow-main-color"}>
+      <div className={getList() == 1 ?" absolute w-[70%] z-50 trans top-0 left-0 h-full flex flex-col gap-12 py-5 px-5 bg-sec-color    " : " absolute w-[70%] z-50 trans top-0 left-[-200%] h-full flex flex-col gap-12 py-5 px-5 bg-sec-color   "}>
           <div className="flex justify-between items-center">
               <Link to="/" >
                 <h1 className={" text-xl font-bold"}>Livin.</h1>
