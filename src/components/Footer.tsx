@@ -5,8 +5,20 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+    const goToTest = () => { 
+        if (window.location.pathname != "/" ) { 
+            setTimeout(() => { 
+                document.getElementById("test")?.scrollIntoView();
+            }, 750)
+        }
+        else { 
+            document.getElementById("test")?.scrollIntoView();
+        }
+        
+    }
   return (
     <motion.div 
     initial="hidden"
@@ -24,7 +36,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-2 w-fit">
                         <div className='flex gap-2'>
                             <FontAwesomeIcon icon={faLocationDot} size="lg" className="text-main-color mt-[1px]" />
-                            <p className='text-dark-gray '>Elsalam city, Cairo, Egypt.</p>
+                            <p className='text-dark-gray '>Cairo, Egypt.</p>
                         </div>
                         <div className='flex gap-2'>
                         <FontAwesomeIcon icon={faPhone} size="lg" className="text-main-color mt-[1px]" />
@@ -42,8 +54,10 @@ const Footer = () => {
                     <div className="flex flex-col gap-4 max-[950px]:hidden">
                         <h3 className="font-bold text-2xl">Menu</h3>
                         <ul className="flex flex-col gap-2 ">
-                            <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">Products</li>
-                            <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">About Us</li>
+                            <Link to="/AllProducts">
+                                <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">Products</li>
+                            </Link>
+                            <li onClick={goToTest} className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">About Us</li>
                             <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">Support</li>
                             <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">Terms & Policy</li>
                         </ul>
@@ -52,9 +66,15 @@ const Footer = () => {
                     <div className="flex flex-col gap-4 max-[950px]:hidden">
                         <h3 className="font-bold text-2xl">Account</h3>
                         <ul className="flex flex-col gap-2 ">
-                            <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">My Account</li>
-                            <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">Checkout</li>
-                            <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">My cart</li>
+                            <Link to="/InCart">
+                                <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">My Account</li>
+                            </Link>
+                            <Link to="/InCart">
+                                <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">Checkout</li>
+                            </Link>
+                            <Link to="/InCart">
+                                <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">My cart</li>
+                            </Link>
                             <li className="text-dark-gray  hover:text-main-black hover:text-opacity-70 cursor-pointer trans hover:opacity-85">My catalog</li>
                         </ul>
                     </div>
