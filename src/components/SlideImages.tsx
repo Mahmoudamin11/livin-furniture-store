@@ -32,10 +32,10 @@ const SlideImages = () => {
 
   return (
     <div className=''>
-      <div draggable= "true" onDrag={() => next()} className='min-[600px]:hidden relative h-80'>
-        {<img loading='lazy' src={hallp1} alt="" className={`h-80 w-full ${img == 1 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
-        {<img loading='lazy' src={hallp2} alt="" className={`h-80 w-full ${img == 2 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
-        {<img loading='lazy' src={hallp3} alt="" className={`h-80 w-full ${img == 3 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} /> }
+      <div  className='min-[600px]:hidden relative h-80'>
+        {<img  src={hallp1} alt="" className={`h-80 w-full ${img == 1 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
+        {<img  src={hallp2} alt="" className={`h-80 w-full ${img == 2 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
+        {<img  src={hallp3} alt="" className={`h-80 w-full ${img == 3 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} /> }
         <div className='group bg-white/65 cursor-pointer trans hover:bg-white/75 p-2 absolute top-[8%] right-[8%] flex flex-col gap-1'>
           <h3 className='font-bold text-2xl'>Stochie</h3>
           <p className='font-bold text-lg'>RP 17.000.000</p>
@@ -47,9 +47,9 @@ const SlideImages = () => {
       </div>
 
       <div  className={`   max-[600px]:hidden xl:h-[82vh]   relative w-full h-[400px] min-[810px]:h-96 min-[940px]:h-[450px] min-[1000px]:h-[570px]  flex trans`}>
-        { <img src={hall1} loading='lazy' alt="" className={` w-full ${img == 1 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
-        { <img src={hall3} loading='lazy' alt="" className={` w-full ${img == 3 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
-        { <img src={hall2} loading='lazy' alt="" className={` w-full ${img == 2 ? "opacity-100 " : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
+        { <img src={hall1}  alt="" className={` w-full ${img == 1 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
+        { <img src={hall3}  alt="" className={` w-full ${img == 3 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
+        { <img src={hall2}  alt="" className={` w-full ${img == 2 ? "opacity-100 " : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
         <div className='flex max-[600px]:hidden flex-col absolute bottom-0 left-[5%] w-1/2 min-[680px]:w-[40%] min-[860px]:w-[30%]  bg-white/65 trans hover:bg-white/75 cursor-pointer  mt-9 p-4 min-[1000px]:p-8 lg:p-10 xl:py-14 xl:px-10 lg:w-[40%] xl:w-[30%]  gap-5 xl:gap-8'>
             <h2 className='font-bold text-3xl  min-[900px]:text-4xl lg:text-5xl xl:leading-[55px]'>We  Help You Make Unique Interior</h2>
             <p className='text-black/40 lg:text-lg'>We will provide consulting services to create the modern interior of your dreams.</p>
