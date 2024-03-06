@@ -95,16 +95,16 @@ const SlideImages = () => {
             </div>
           
 
-          </ul>
+        </ul>
 
           
       </div>
 
-      <div className='flex min-[600px]:hidden flex-col mob-p mt-9 z-0  gap-5'>
+      <div className='flex min-[600px]:hidden flex-col mob-p mt-9   gap-5'>
         <h2 className='head'>We  Help You Make Unique Interior</h2>
         <p className='text-dark-gray text-center'>We will provide consulting services to create the modern interior of your dreams.</p>
-        <Link to="/AllProducts" className='z-0' onClick={() => changeOpenPage("product")}>
-          <button className='w-full bg-main-color py-4 trans hover:opacity-75 z-0 text-main-white font-bold'>Shop Now</button>
+        <Link to="/AllProducts" className={`-z-0`} onClick={() => changeOpenPage("product")}>
+          <button className='w-full bg-main-color py-4 trans hover:opacity-75  text-main-white font-bold'>Shop Now</button>
         </Link>
       </div>
     </div>
