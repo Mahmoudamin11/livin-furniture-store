@@ -1,8 +1,7 @@
 
-import { MainCart, useCart} from './context/Cart';
+import { MainCart} from './context/Cart';
 import Navbar from './components/Navbar';
 import AnimatedPages from './utilites/AnimatedPages';
-import { useEffect } from 'react';
 
 
 const App = () => {

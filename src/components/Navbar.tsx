@@ -4,7 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
-import { useEffect,  useState } from "react";
+import {   useState } from "react";
 import MobList from "./MobList";
 import ThemeChanger from "./ThemeChanger";
 import { useCart } from "../context/Cart";

@@ -1,6 +1,6 @@
 {
   "name": "livin-furniture-store",
-  "homepage": "https://mahmoudamin11.github.io/livin-furniture-store/",
+  
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "homepage": "https://mahmoudamin11.github.io/livin-furniture-store/",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
