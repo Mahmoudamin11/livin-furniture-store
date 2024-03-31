@@ -74,13 +74,6 @@ const AllProducts = () => {
                 changeSearchState();
             }
         }
-        else { 
-            if (getSearchedProd() != "") { 
-                if (getSearchState() == 0 ) { 
-                    changeSearchState();
-                }
-            }
-        }
     }, [window.location.pathname])
 
 

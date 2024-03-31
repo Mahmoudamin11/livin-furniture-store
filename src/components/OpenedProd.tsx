@@ -77,7 +77,8 @@ const OpenedProd = () => {
                         products.map((prod) => (
                             <div key={prod.head}  className={`${(prod.type == item?.type) && prod.head != item?.head ? "block" : "hidden"} shadow-xl w-[150px] h-[150px] items-center cursor-pointer trans hover:opacity-85 `}>
                                 <Link to="/Product" onClick={toggleshower} >
-                                    <img onClick={() => chooseProd(prod.head)} src={prod.img} className="w-[150px] h-[150px]" alt="" />
+                                    {/* !!!!!!!!!!!!!!!!!!!!!!!!! */}
+                                    <img onClick={() => {chooseProd(prod.head); window.scrollTo(0, 0);}} src={prod.img} className="w-[150px] h-[150px]" alt="" />
                                 </Link>
                             </div>
                         ))
