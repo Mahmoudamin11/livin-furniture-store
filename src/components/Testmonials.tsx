@@ -112,13 +112,13 @@ const Testmonials = () => {
             </motion.div>
         </motion.div>
 
-
+        {/* Small pages under 610 pexels */}
         <motion.div 
         className="flex relative overflow-hidden w-full 610:hidden">
             <div className={`  h-[326px]   gap-5 ${toggle == 1 ? "translate-x-0   relative " :  "-translate-x-[200%]  absolute top-0 "} transition-transform transform duration-500 place-items-center place-content-center `}>
                 {
                     tests.map((test, index) => (
-                        <div key={test.head} className={`trans bg-sec-color flex flex-col gap-4 justify-center   p-4 h-[340px] ${index > 0 ? "hidden" : "block"}`}>
+                        <div key={test.head} className={`trans bg-sec-color flex flex-col gap-4 justify-center   p-4 h-[340px] ${index == 0 ? "block" : "hidden"}`}>
                             <div className="flex justify-start">
                                 <FontAwesomeIcon icon={faQuoteLeft} size="2xl" className="ml-3 opacity-65" />
                             </div>
@@ -138,7 +138,7 @@ const Testmonials = () => {
                 }
             </div>
 
-            <div className={` h-[326px]   gap-5 ${toggle < 2 ? " translate-x-[200%] absolute top-0" : toggle > 2 ? " translate-x-[-200%] absolute top-0 transition-transform transform duration-500" :  "translate-x-0  relative transition-transform transform duration-500"}  place-items-center place-content-center `}>
+            <div className={` h-[326px]   gap-5 ${toggle < 2 ? " translate-x-[200%] absolute top-0 transition-transform transform duration-500" : toggle > 2 ? " translate-x-[-200%] absolute top-0 transition-transform transform duration-500" :  "translate-x-0  relative transition-transform transform duration-500"}  place-items-center place-content-center `}>
                 {
                     tests.map((test, index) => (
                         <div key={test.head} className={`trans bg-sec-color flex flex-col gap-4 justify-center w-full   p-4 h-[340px] ${index == 1 ? "block" : "hidden"}`}>
@@ -161,11 +161,9 @@ const Testmonials = () => {
                 }
             </div>
 
-            <div className={`  h-[326px]   gap-5 ${toggle == 3 ? "translate-x-0   relative" : toggle < 3 ? " translate-x-[200%] transition-transform transform duration-500 absolute" : "-translate-x-[200%] transition-transform transform duration-500  absolute top-0"}  place-items-center place-content-center `}>
+            <div className={`  h-[326px]   gap-5 ${toggle == 3 ? "translate-x-0   relative transition-transform transform duration-500" : toggle < 3 ? " translate-x-[200%] transition-transform transform duration-500 absolute" : "-translate-x-[200%] transition-transform transform duration-500  absolute top-0"}  place-items-center place-content-center `}>
                 {
                     tests.map((test, index) => (
-                        // className={(((toggleLG ==1) && (index == 0|| index == 2)) || ((toggleLG ==2) && (index == 1|| index == 3))) ? " trans bg-sec-color flex flex-col gap-4 justify-center opacity-100  p-4 h-[340px]" 
-                        // : "trans hidden absolute bg-sec-color  flex-col gap-4 justify-center  p-4 h-[340px] "}
                         <div key={test.head} className={`trans bg-sec-color flex flex-col gap-4 justify-center   p-4 h-[340px] ${index == 2  ? "block" : "hidden"}`}>
                             <div className="flex justify-start">
                                 <FontAwesomeIcon icon={faQuoteLeft} size="2xl" className="ml-3 opacity-65" />
