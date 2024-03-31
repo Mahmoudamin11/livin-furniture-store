@@ -49,7 +49,7 @@ const SlideImages = () => {
 
     {/* large pages */}
     {/* xl:h-[82vh] */}
-      <div  className={`   hidden 600:flex xl:h-[82vh] 1580:h-[89vh]   relative w-full h-[400px] 810:h-96 940:h-[450px] 1000:h-[570px]   trans`}>
+      <div  className={`   hidden 600:flex xl:h-[82vh] 1580:h-[87vh]   relative w-full h-[400px] 810:h-96 940:h-[450px] 1000:h-[570px]   trans`}>
         { <img src={hall1}  alt="" className={` w-full ${img == 1 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
         { <img src={hall3}  alt="" className={` w-full ${img == 3 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
         { <img src={hall2}  alt="" className={` w-full ${img == 2 ? "opacity-100 " : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
