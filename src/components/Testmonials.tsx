@@ -58,7 +58,7 @@ const Testmonials = () => {
         
         <motion.div 
         
-        className="flex relative overflow-hidden w-full max-[610px]:hidden">
+        className="610:flex relative overflow-hidden w-full hidden">
             <motion.div 
             initial={{opacity:0}}
             // transition={{opacity:{duration:0.5}}}    
@@ -114,7 +114,7 @@ const Testmonials = () => {
 
 
         <motion.div 
-        className="flex relative overflow-hidden w-full min-[610px]:hidden">
+        className="flex relative overflow-hidden w-full 610:hidden">
             <div className={`  h-[326px]   gap-5 ${toggle == 1 ? "translate-x-0   relative " :  "-translate-x-[200%]  absolute top-0 "} transition-transform transform duration-500 place-items-center place-content-center `}>
                 {
                     tests.map((test, index) => (
@@ -138,7 +138,7 @@ const Testmonials = () => {
                 }
             </div>
 
-            <div className={` h-[326px]   gap-5 ${toggle < 2 ? " translate-x-[200%] absolute top-0" : toggle > 2 ? " translate-x-[-200%] absolute top-0" :  "translate-x-0  relative "} transition-transform transform duration-500 place-items-center place-content-center `}>
+            <div className={` h-[326px]   gap-5 ${toggle < 2 ? " translate-x-[200%] absolute top-0" : toggle > 2 ? " translate-x-[-200%] absolute top-0 transition-transform transform duration-500" :  "translate-x-0  relative transition-transform transform duration-500"}  place-items-center place-content-center `}>
                 {
                     tests.map((test, index) => (
                         <div key={test.head} className={`trans bg-sec-color flex flex-col gap-4 justify-center w-full   p-4 h-[340px] ${index == 1 ? "block" : "hidden"}`}>
@@ -214,7 +214,7 @@ const Testmonials = () => {
 
         {/* arrows */}
         <motion.div 
-        className="flex gap-5 min-[610px]:hidden">
+        className="flex gap-5 610:hidden">
             <div  onClick={() => toggler(toggle-1)} className={`flex trans hover:opacity-85 rotate-180 items-center ${toggle > 1?  " bg-main-color cursor-pointer" : " bg-dark-gray pointer-events-none" } justify-center text-white w-10 h-10 p-2 rounded-full cursor-pointer trans`}>
               <FontAwesomeIcon  icon={faAngleRight} size='lg' />
             </div>
@@ -224,7 +224,7 @@ const Testmonials = () => {
         </motion.div>
 
         <motion.div 
-        className="flex gap-5 max-[610px]:hidden lg:hidden">
+        className=" gap-5 hidden 610:flex lg:hidden">
             <div  onClick={() => togglerLG()} className={`flex trans hover:opacity-85 rotate-180 items-center justify-center text-white  ${toggleLG == false ?  " bg-main-color cursor-pointer" : " bg-dark-gray pointer-events-none" } w-10 h-10 p-2 rounded-full cursor-pointer trans`}>
               <FontAwesomeIcon  icon={faAngleRight} size='lg' />
             </div>

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useCart } from '../context/Cart'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from 'react-router-dom';
 import paypal from "../assets/download-removebg-preview.png"
 import { useEffect } from 'react';
@@ -43,20 +44,23 @@ const InCart = () => {
                   
                   {
                     products.map((item) => (
-                      <div key={item.head} className={`group flex trans cursor-pointer ${item.quantity > 0 ? "block" : "hidden"} sm:mr-5 justify-between items-center  border-b-[1px] border-solid border-dark-gray py-4 `}>
+                      <div key={item.head} className={`group flex trans  ${item.quantity > 0 ? "block" : "hidden"} sm:mr-5 justify-between items-center  border-b-[1px] border-solid border-dark-gray py-4 `}>
                           
-                          <Link to="/Product" onClick={() => chooseProd(item.head)}>
-                            <div className='hover:opacity-70 trans flex gap-6 items-center'>
+                          <div>
+                            <div className=' trans flex gap-6 items-center'>
                               <img src={item.img} className=' w-[100px] h-[100px]' alt="" />
                               <div className=' flex flex-col w-[120px]'>
                                   <h1 className=' text-2xl font-bold'>{item.head}</h1>
                                   <div className=' flex gap-2 items-center text-sm'>
                                     <h1 className=' text-dark-gray '>{item.type}</h1>
                                     <span className=''><span className='text-main-color'>$</span>{item.price}</span>
+                                    <Link to="/Product" onClick={() => chooseProd(item.head)}>
+                                      <FontAwesomeIcon icon={faUpRightFromSquare} className='text-sm cursor-pointer hover:opacity-85 trans text-main-color' />
+                                    </Link>
                                   </div>
                               </div>
                             </div>
-                          </Link>
+                          </div>
 
                             <div className=" flex  w-44 justify-center gap-8">
                               <div>
@@ -86,7 +90,7 @@ const InCart = () => {
                   
                   {
                     products.map((item) => (
-                      <Link to="/Product" className=' '>
+                      <div className=' '>
                         <div key={item.head} className={`flex lg:hidden trans hover:bg-light-gray cursor-pointer ${item.quantity > 0 ? "block" : "hidden"} sm:mr-5 justify-between items-center  border-b-[1px] border-solid border-dark-gray py-4 `}>
                           
                             <div className=' flex gap-3 items-center w-full'>
@@ -99,7 +103,12 @@ const InCart = () => {
                                 <div className=' flex items-center justify-between w-full'>
                                     <div className=' flex flex-col'>
                                       <h1 className=' text-2xl font-bold'>{item.head}</h1>
-                                      <h1 className=' text-dark-gray '>{item.type}</h1>
+                                      <div className="flex gap-2">
+                                        <h1 className=' text-dark-gray '>{item.type}</h1>
+                                        <Link to="/Product">
+                                          <FontAwesomeIcon onClick={() => chooseProd(item.head)} icon={faUpRightFromSquare} className='text-sm cursor-pointer hover:opacity-85 trans text-main-color'  />
+                                        </Link>
+                                      </div>
                                     </div>
                                     <span className=''><span className='text-main-color'>$</span>{item.price}</span>
                                 </div>
@@ -125,7 +134,7 @@ const InCart = () => {
                             </div>
                             
                           </div>
-                      </Link>
+                      </div>
                     ))
                   }
                 </div>

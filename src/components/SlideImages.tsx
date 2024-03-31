@@ -32,7 +32,8 @@ const SlideImages = () => {
 
   return (
     <div className=''>
-      <div  className='min-[600px]:hidden relative h-80'>
+      {/* Small Pages */}
+      <div  className='600:hidden relative h-80'>
         {<img  src={hallp1} alt="" className={`h-80 w-full ${img == 1 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
         {<img  src={hallp2} alt="" className={`h-80 w-full ${img == 2 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} />}
         {<img  src={hallp3} alt="" className={`h-80 w-full ${img == 3 ? " opacity-100 " : "opacity-0"} absolute top-0 left-0 transition-opacity duration-500`} /> }
@@ -47,12 +48,13 @@ const SlideImages = () => {
       </div>
 
     {/* large pages */}
-      <div  className={`   max-[600px]:hidden xl:h-[82vh]   relative w-full h-[400px] min-[810px]:h-96 min-[940px]:h-[450px] min-[1000px]:h-[570px]  flex trans`}>
+    {/* xl:h-[82vh] */}
+      <div  className={`   hidden 600:flex xl:h-[82vh] 1580:h-[89vh]   relative w-full h-[400px] 810:h-96 940:h-[450px] 1000:h-[570px]   trans`}>
         { <img src={hall1}  alt="" className={` w-full ${img == 1 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
         { <img src={hall3}  alt="" className={` w-full ${img == 3 ? "opacity-100" : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
         { <img src={hall2}  alt="" className={` w-full ${img == 2 ? "opacity-100 " : " opacity-0" } trans absolute top-0 left-0 h-full transition-opacity duration-500`} />}
-        <div className='flex max-[600px]:hidden flex-col absolute bottom-0 left-[5%] w-1/2 min-[680px]:w-[40%] min-[860px]:w-[30%]  bg-white/65 trans hover:bg-white/75   mt-9 p-4 min-[1000px]:p-8 lg:p-10 xl:py-14 xl:px-10 lg:w-[40%] xl:w-[30%]  gap-5 xl:gap-8'>
-            <h2 className='font-bold text-3xl  min-[900px]:text-4xl lg:text-5xl xl:leading-[55px]'>We  Help You Make Unique Interior</h2>
+        <div className=' 600:flex hidden flex-col absolute bottom-0 left-[5%] w-1/2 680:w-[40%] 860:w-[30%]  bg-white/65 trans hover:bg-white/75   mt-9 p-4 1000:p-8 lg:p-10 xl:py-14 xl:px-10 lg:w-[40%] xl:w-[30%] 1580:w-[25%]  gap-5 xl:gap-8'>
+            <h2 className='font-bold text-3xl  900:text-4xl lg:text-5xl xl:leading-[55px]'>We  Help You Make Unique Interior</h2>
             <p className='text-black/40 lg:text-lg'>We will provide consulting services to create the modern interior of your dreams.</p>
             <Link to="/AllProducts"  onClick={() => changeOpenPage("product")}><button className='w-1/2  bg-main-color py-3 trans hover:opacity-85 text-main-white font-bold cursor-pointer '>Shop Now</button></Link>
         </div>
@@ -70,16 +72,16 @@ const SlideImages = () => {
 
       
       <div className='w-full flex gap-2 '>
-        <div className='w-[40%] min-[450px]:w-[51%] sm:w-[60%] md:w-[70%] lg:w-[78%] bg-sec-color py-2' />
+        <div className='w-[40%] 450:w-[51%] sm:w-[60%] md:w-[70%] lg:w-[78%] bg-sec-color py-2' />
         
 
         <ul className=' bg-main-white flex gap-5 py-2 items-center mx-auto'>
-            <div className=' flex gap-5 min-[600px]:hidden'>
+            <div className=' flex gap-5 600:hidden'>
               <li onClick={() => circleImg(1)} className={img == 1 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
               <li onClick={() => circleImg(2)} className={img == 2 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
               <li onClick={() => circleImg(3)} className={img == 3 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
             </div>
-            <div className=' flex gap-5 max-[600px]:hidden'>
+            <div className='  gap-5 hidden 600:flex'>
               <li onClick={() => circleImg(3)} className={img == 3 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
               <li onClick={() => circleImg(1)} className={img == 1 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
               <li onClick={() => circleImg(2)} className={img == 2 ?'w-3 h-3 rounded-full active cursor-pointer trans  ': 'w-3 h-3 rounded-full bg-dark-gray opacity-85 cursor-pointer trans  '}></li>
@@ -100,7 +102,7 @@ const SlideImages = () => {
           
       </div>
 
-      <div className='flex min-[600px]:hidden flex-col mob-p mt-9   gap-5'>
+      <div className='flex 600:hidden flex-col mob-p mt-9   gap-5'>
         <h2 className='head'>We  Help You Make Unique Interior</h2>
         <p className='text-dark-gray text-center'>We will provide consulting services to create the modern interior of your dreams.</p>
         <Link to="/AllProducts" className={`-z-0`} onClick={() => changeOpenPage("product")}>

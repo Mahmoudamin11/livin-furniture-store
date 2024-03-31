@@ -26,8 +26,8 @@ const Footer = () => {
   viewport={{ once: true }}
     className='mob-p space-up '>
         <div className='py-16 border-t-[1px] border-solid border-dark-gray flex flex-col gap-10'>
-            <div className="min-[950px]:flex min-[950px]:justify-between">
-                <div className='flex flex-col gap-4 min-[950px]:w-1/3'>
+            <div className="hidden 950:flex 950:justify-between">
+                <div className='flex flex-col gap-4 950:w-1/3'>
                     <div className="flex flex-col gap-1">
                         <h3 className='font-bold text-3xl w-fit'>Livin.</h3>
                         <p className='text-main-black opacity-75 '>Worldwide furniture store since 2020. <br />We sell over +1000 branded products on our websites.</p>
@@ -51,7 +51,7 @@ const Footer = () => {
 
                 
                     
-                    <div className="flex flex-col gap-4 max-[950px]:hidden">
+                    <div className=" flex-col gap-4 hidden 950:flex">
                         <h3 className="font-bold text-2xl">Menu</h3>
                         <ul className="flex flex-col gap-2 ">
                             <Link to="/AllProducts">
@@ -63,7 +63,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="flex flex-col gap-4 max-[950px]:hidden">
+                    <div className=" flex-col gap-4 hidden 950:flex">
                         <h3 className="font-bold text-2xl">Account</h3>
                         <ul className="flex flex-col gap-2 ">
                             <Link to="/InCart">
@@ -79,12 +79,12 @@ const Footer = () => {
                         </ul>
                     </div>
                     
-                    <div className="flex flex-col gap-6 max-[950px]:hidden">
+                    <div className="flex flex-col gap-6">
                         <div className="flex flex-col gap-3">
                             <h2 className="font-bold text-2xl">Stay Updated</h2>
                             <div className="flex gap-1 h-10 ">
-                                <input type="text" className=" bg-light-gray border-[1px] border-solid border-dark-gray  h-full outline-none trans w-2/3 min-[750px]:w-full  pl-2" placeholder="Enter your email" />
-                                <span className="h-full flex items-center  w-10 min-[750px]:w-12 justify-center  bg-main-color text-main-white trans cursor-pointer hover:opacity-85">
+                                <input type="text" className=" bg-light-gray border-[1px] border-solid border-dark-gray  h-full outline-none trans w-2/3 750:w-full  pl-2" placeholder="Enter your email" />
+                                <span className="h-full flex items-center  w-10 750:w-12 justify-center  bg-main-color text-main-white trans cursor-pointer hover:opacity-85">
                                 <FontAwesomeIcon icon={faPaperPlane} size="lg" />
                                 </span>
                             </div>
@@ -101,8 +101,8 @@ const Footer = () => {
                 
             </div>
 
-            <div className="flex min-[950px]:hidden flex-col gap-10 min-[500px]:gap-12 min-[600px]:gap-24 min-[800px]:gap-36 min-[500px]:flex-row">
-                <div className="flex gap-16 min-[500px]:gap-12 min-[600px]:gap-24 min-[800px]:gap-36">
+            <div className="flex 950:hidden flex-col gap-10 500:gap-12 600:gap-24 800:gap-36 500:flex-row">
+                <div className="flex gap-16 500:gap-12 600:gap-24 800:gap-36">
                     <div className="flex flex-col gap-4 ">
                         <h3 className="font-bold text-2xl">Menu</h3>
                         <ul className="flex flex-col gap-2">
@@ -126,8 +126,8 @@ const Footer = () => {
                     <div className="flex flex-col gap-3">
                         <h2 className="font-bold text-2xl">Stay Updated</h2>
                         <div className="flex gap-1 h-10 ">
-                            <input type="text" className=" bg-light-gray border-[1px] border-solid border-dark-gray  h-full outline-none trans w-2/3 min-[750px]:w-full  pl-2" placeholder="Enter your email" />
-                            <span className="h-full flex items-center  w-10 min-[750px]:w-12 justify-center  bg-main-color text-main-white trans cursor-pointer hover:opacity-85">
+                            <input type="text" className=" bg-light-gray border-[1px] border-solid border-dark-gray  h-full outline-none trans w-2/3 750:w-full  pl-2" placeholder="Enter your email" />
+                            <span className="h-full flex items-center  w-10 750:w-12 justify-center  bg-main-color text-main-white trans cursor-pointer hover:opacity-85">
                                 <FontAwesomeIcon icon={faPaperPlane} size="lg" />
                             </span>
                         </div>
