@@ -4,7 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
-import {   useState } from "react";
+import {   useEffect, useState } from "react";
 import MobList from "./MobList";
 import ThemeChanger from "./ThemeChanger";
 import { useCart } from "../context/Cart";
@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     const [looking, setlooking] = useState("");
     
-    const {totalQuantity, getOpenPage,themeChange, theme, toggleList, changeSearchedProd, changeSearchState, getSearchState} = useCart();
+    const {getSearchedProd, totalQuantity, getOpenPage,themeChange, theme, toggleList, changeSearchedProd, changeSearchState, getSearchState} = useCart();
     
     const closeTheme = () => { 
         if (theme == 1) { 
@@ -49,9 +49,18 @@ const Navbar = () => {
         changeSearchedProd("");
     }
 
+    // if we are removing the search by keyboard
+    // this won't work except if the searchedProd has been changed  
+    useEffect(() => { 
+        if (getSearchedProd() == "") { 
+            if (getSearchState() == 1)
+                changeSearchState();
+        }
+    }, [getSearchedProd()]);
+
     return ( 
         // 
-        <div  className={`${getSearchState() != 1 ? "grid grid-cols-[55%_1fr] sm:grid-cols-[70%_1fr] md:grid-cols-[80%_1fr]  w-full" : "grid w-full grid-cols-1 "} `}>
+        <div  className={`${getSearchState() != 1 ? "grid grid-cols-[55%_1fr] sm:grid-cols-[70%_1fr] md:grid-cols-[80%_1fr]  w-full" : "grid  grid-cols-1 sm:grid-cols-[70%_1fr] md:grid-cols-[80%_1fr]  w-full"} `}>
 
             <div onClick={closeTheme} className=" relative overflow-hidden flex justify-between items-center bg-sec-color ">
                 <div className="flex gap-8 max-sm:h-[72px]  items-center sm:justify-around lg:justify-between min-[1285px]:pr-24    py-5 px-5 sm:px-12 lg:px-24 xl:px-24  w-full">
@@ -98,15 +107,15 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                {/* search 1  */}
-                <div   className=" max-lg:hidden  bg-main-white p-2 flex items-center  gap-2 max-[1135px]:-ml-14">
-                    <FontAwesomeIcon  icon={faMagnifyingGlass}  className="  cursor-pointer trans hover:opacity-75 text-sm" />
-                    <Link to="/AllProducts" className="" >
+                {/* search 1  large screens*/}
+                <div   className=" max-lg:hidden cursor-text  bg-main-white p-2 flex items-center  gap-2 max-[1135px]:-ml-14">
+                    <FontAwesomeIcon  icon={faMagnifyingGlass}  className="  trans hover:opacity-75 text-sm" />
+                    <Link to="/AllProducts" className=" cursor-text" >
                         <input  value={looking} maxLength={20}   onChange={handleSearch} type="text" name="" id="search" className="bg-main-white h-full outline-none   text-sm w-56" placeholder="What are you searching for ?" />
                     </Link>
                 </div>
 
-                {/* search 2  */}
+                {/* search 2 small screens   */}
                 {getSearchState() == 1 && <div className="bg-main-white shadow-md lg:hidden absolute h-[72px]  w-screen  top-0  left-0 flex justify-around items-center">
                     <input type="text" value={looking} maxLength={20}  autoFocus onChange={handleSearch} className=" w-2/3   outline-none" placeholder="What are you searching for ?" />
                     <FontAwesomeIcon onClick={() => handleCloseSearch()} icon={faXmark} size="xl" className="mr-2  z-50 cursor-pointer trans hover:opacity-75" />

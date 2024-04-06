@@ -8,7 +8,7 @@ import CartIcon from '../components/CartIcon';
 
 const AllProducts = () => {
     const location  = useLocation();
-    const {products, changeOpenPage, getSearchedProd, changeSearchState, getSearchState} = useCart();
+    const {products, changeOpenPage,  getSearchedProd, changeSearchState, getSearchState} = useCart();
     const [types] = useState([
         "All",
         "Chair",
@@ -74,7 +74,16 @@ const AllProducts = () => {
                 changeSearchState();
             }
         }
-    }, [window.location.pathname])
+        // if the user was searching for something and he opend the page again 
+        // the search input will open as it was 
+        else { 
+            if (getSearchedProd() != "") { 
+                if (getSearchState() == 0) { 
+                    changeSearchState();
+                }
+            }
+        }
+    }, [window.location.pathname]);
 
 
   return (

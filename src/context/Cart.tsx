@@ -144,7 +144,13 @@ export function MainCart({children}:child) {
 
       useEffect(() => { 
         localStorage.setItem("theme", JSON.stringify(currTheme));
-      }, [currTheme])
+      }, [currTheme]);
+
+      useEffect(() => { 
+        if (location.pathname != "") { 
+          // code 
+        }
+      }, [location.pathname])
       
       // toggle search state 
       const changeSearchState = () => { 

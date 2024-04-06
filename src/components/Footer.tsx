@@ -26,14 +26,14 @@ const Footer = () => {
   viewport={{ once: true }}
     className='mob-p space-up '>
         <div className='py-16 border-t-[1px] border-solid border-dark-gray flex flex-col gap-10'>
-            <div className="hidden 950:flex 950:justify-between">
+            <div className="flex 950:justify-between">
                 <div className='flex flex-col gap-4 950:w-1/3'>
                     <div className="flex flex-col gap-1">
                         <h3 className='font-bold text-3xl w-fit'>Livin.</h3>
                         <p className='text-main-black opacity-75 '>Worldwide furniture store since 2020. <br />We sell over +1000 branded products on our websites.</p>
                 
                     </div>
-                    <div className="flex flex-col gap-2 w-fit">
+                    <div className="hidden 950:flex flex-col gap-2 w-fit">
                         <div className='flex gap-2'>
                             <FontAwesomeIcon icon={faLocationDot} size="lg" className="text-main-color mt-[1px]" />
                             <p className='text-dark-gray '>Cairo, Egypt.</p>
@@ -79,7 +79,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     
-                    <div className="flex flex-col gap-6">
+                    <div className="hidden 950:flex flex-col gap-6">
                         <div className="flex flex-col gap-3">
                             <h2 className="font-bold text-2xl">Stay Updated</h2>
                             <div className="flex gap-1 h-10 ">
@@ -89,7 +89,7 @@ const Footer = () => {
                                 </span>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-3">
+                        <div className="hidden 950:flex flex-col gap-3">
                             <h2 className="font-bold text-2xl">Stay Connected</h2>
                             <ul className="flex gap-4 items-center">
                                 <a href="https://github.com/Mahmoudamin11" target="_blank" className="text-main-color trans hover:opacity-85 text-xl"><FontAwesomeIcon icon={faGithub} size="xl" /></a>
