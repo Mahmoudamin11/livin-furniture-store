@@ -108,12 +108,12 @@ const Navbar = () => {
                 </div>
 
                 {/* search 1  large screens*/}
-                <div   className=" max-lg:hidden cursor-text  bg-main-white p-2 flex items-center  gap-2 max-[1135px]:-ml-14">
+                <Link  to="/AllProducts"  className=" max-lg:hidden cursor-text  bg-main-white p-2 flex items-center  gap-2 max-[1135px]:-ml-14">
                     <FontAwesomeIcon  icon={faMagnifyingGlass}  className="  trans hover:opacity-75 text-sm" />
-                    <Link to="/AllProducts" className=" cursor-text" >
+                    <div  className=" cursor-text" >
                         <input  value={looking} maxLength={20}   onChange={handleSearch} type="text" name="" id="search" className="bg-main-white h-full outline-none   text-sm w-56" placeholder="What are you searching for ?" />
-                    </Link>
-                </div>
+                    </div>
+                </Link>
 
                 {/* search 2 small screens   */}
                 {getSearchState() == 1 && <div className="bg-main-white shadow-md lg:hidden absolute h-[72px]  w-screen  top-0  left-0 flex justify-around items-center">
