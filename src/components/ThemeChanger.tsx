@@ -31,7 +31,7 @@ const ThemeChanger = ({pos}:any) => {
 
   return (
     // 
-    <div className={`${pos == 1 ? "top-full" : "-top-[200%]"} bg-light-gray shadow-card w-[150%] min-[420px]:w-[140%] lg:w-full justify-between p-4 flex z-30 absolute trans -left-10  gap-1 `}
+    <div className={`${pos == 1 ? "top-full" : "-top-[200%]"} bg-light-gray shadow-card w-[165%] min-[420px]:w-[140%] lg:w-full justify-between p-4 flex z-30 absolute trans -left-10  gap-1 `}
         
     >
             <span onClick={() => themeToggler(1)} className={active == 1 ? "w-8 h-8 bg-th1-btn border-2 border-solid trans  hover:scale-[120%]  scale-[120%] hover:shadow-xl cursor-pointer border-white" : "w-8 h-8 bg-th1-btn border-2 border-solid trans  hover:scale-[120%]  hover:shadow-xl cursor-pointer border-white"}></span>
